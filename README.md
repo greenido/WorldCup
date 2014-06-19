@@ -6,6 +6,10 @@ For now, we are fetching the info from these end points:
   * http://worldcup.sfg.io/matches
   * http://worldcup.sfg.io/today
  
+Demo
+====
+https://docs.google.com/spreadsheets/d/17Z_FuIYbL2Q8ePp38k_vDqB5UdMA7SETwSMYrKSKiNA/edit#gid=0
+
 
 Improvements ideas
 =================

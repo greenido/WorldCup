@@ -54,18 +54,15 @@ function fetchScores(sheetname, url) {
    curObj.date = (tmpDate);
    curObj.status = rawData[i].status;
    curObj.winner = rawData[i].winner;    
-   curObj.match_number = rawData[i].match_number;
-   curObj.match_number = rawData[i].match_number;
-    
     
    curObj.htcountry = rawData[i].home_team.country;
    curObj.htcode = rawData[i].home_team.code;
    curObj.htgoals = rawData[i].home_team.goals;
     
-   curObj.atcountry = rawData[i].home_team.country;
-   curObj.atcode = rawData[i].home_team.code;
-   curObj.atgoals = rawData[i].home_team.goals;
-    data.push(curObj);
+   curObj.atcountry = rawData[i].away_team.country;
+   curObj.atcode = rawData[i].away_team.code;
+   curObj.atgoals = rawData[i].away_team.goals;
+   data.push(curObj);
   }
   
   var ss = SpreadsheetApp.getActiveSpreadsheet();

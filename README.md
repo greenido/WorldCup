@@ -4,7 +4,7 @@ WorldCup
 Work with World Cap API and Apps script to get interesting insights
  
 
-Improvments ideas
+Improvements ideas
 =================
   1. Integration with BigQuery to give more stats on match vs different worlds cap.
   2. Gain more data (e.g. bets, weather and http://fivethirtyeight.com/) to try and find better prediction.

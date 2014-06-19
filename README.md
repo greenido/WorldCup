@@ -1,7 +1,10 @@
 WorldCup
 ========
 
-Work with World Cap API and Apps script to get interesting insights
+Work with World Cap API and Apps script to get interesting insights.
+For now, we are fetching the info from these end points:
+  * http://worldcup.sfg.io/matches
+  * http://worldcup.sfg.io/today
  
 
 Improvements ideas

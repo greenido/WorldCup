@@ -39,31 +39,37 @@ function fetchScoresToday() {
 // Fetch the scores and push them to the sheet
 //
 function fetchScores(sheetname, url) {
-  var response = UrlFetchApp.fetch(url); 
+   var response = UrlFetchApp.fetch(url); 
   var rawData = JSON.parse(response.getContentText()); 
   var data = new Array();
   for (i in rawData){
    var curObj = new Object();
-
-   curObj.match_number = rawData[i].match_number;
+   
    curObj.location = rawData[i].location;
-    
    var tmpDate = rawData[i].datetime;
    tmpDate = tmpDate.replace("\.000", "");
-   //Logger.log("date: " + tmpDate);
    curObj.date = (tmpDate);
    curObj.status = rawData[i].status;
    curObj.winner = rawData[i].winner;    
+   curObj.match_number = rawData[i].match_number;
     
    curObj.htcountry = rawData[i].home_team.country;
-   curObj.htcode = rawData[i].home_team.code;
-   curObj.htgoals = rawData[i].home_team.goals;
+   curObj.htcode    = rawData[i].home_team.code;
+   curObj.htgoals   = "" + rawData[i].home_team.goals;
     
    curObj.atcountry = rawData[i].away_team.country;
-   curObj.atcode = rawData[i].away_team.code;
-   curObj.atgoals = rawData[i].away_team.goals;
-    data.push(curObj);
+   curObj.atcode    = rawData[i].away_team.code;
+   curObj.atgoals   = "" + rawData[i].away_team.goals;
+   data.push(curObj);
   }
+  
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var allSheet = ss.getSheetByName(sheetname);  
+  ss.toast("Yep! We are now inserting "+data.length+" rows into " + sheetname);
+  setRowsData(allSheet, data);
+  // Show the user when we updated the info on the sheet
+  allSheet.getRange(1, 14).setValue(new Date());
+}
   
   var ss = SpreadsheetApp.getActiveSpreadsheet();
   var allSheet = ss.getSheetByName(sheetname);  

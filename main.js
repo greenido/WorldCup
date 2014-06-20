@@ -24,11 +24,15 @@ function onOpen() {
 };
 
 //
+// Fetch all the results
+//
 function fetchAll() {
   var url = "http://worldcup.sfg.io/matches";
   fetchScores("ALL", url);
 }
 
+//
+// Fetch todays matches 
 //
 function fetchScoresToday() {
   var url = "http://worldcup.sfg.io/matches/today";
@@ -69,12 +73,6 @@ function fetchScores(sheetname, url) {
   setRowsData(allSheet, data);
   // Show the user when we updated the info on the sheet
   allSheet.getRange(1, 14).setValue(new Date());
-}
-  
-  var ss = SpreadsheetApp.getActiveSpreadsheet();
-  var allSheet = ss.getSheetByName(sheetname);  
-  ss.toast("Yep! We are now inserting "+data.length+" rows into " + sheetname);
-  setRowsData(allSheet, data);
 }
  
 // ====================================================================================== 

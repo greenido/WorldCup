@@ -22,3 +22,7 @@ Thanks to: http://softwareforgood.com/soccer-good/ for their API!
 
 
 WorldCup 2014 - with Google sheets and Apps script
+
+
+[![Analytics](https://ga-beacon.appspot.com/UA-65622529-1/WorldCup/main)](https://github.com/igrigorik/ga-beacon)
+
